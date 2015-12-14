@@ -1,2 +1,2 @@
 # DataBinding-album-sample
-An android translation(based on Data Binding Library) of Album Sample app from Martin Fowler’s original article on Presentation Model(MVVM) pattern. http://martinfowler.com/eaaDev/PresentationModel.html
+An android translation(based on [Data Binding Library](http://developer.android.com/tools/data-binding/guide.html)) of Album Sample app from [Martin Fowler’s original article on Presentation Model(MVVM) pattern](http://martinfowler.com/eaaDev/PresentationModel.html).

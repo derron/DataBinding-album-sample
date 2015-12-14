@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+	<data>
+		<variable
+			name="viewModel"
+			type="com.example.databinding.viewmodel.ViewAlbumsViewModel"/>
+	</data>
+	<LinearLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="match_parent"
+	  android:paddingLeft="10dp"
+      android:paddingRight="10dp"
+	  android:orientation="vertical">
+
+		<ListView
+			android:layout_width="fill_parent"
+			android:layout_height="0px"
+			android:layout_weight="1.0"
+            app:items="@{viewModel.albums}"
+            app:itemView="@{viewModel.itemView}"
+            android:onItemClick="@{viewModel.viewAlbum}"
+			android:id="@+id/albumListView"/>
+
+        <TextView
+            android:id="@+id/empty_view"
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="@string/albums_list_empty" />
+
+		<Button
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+            android:text="@string/create"
+            android:onClick="@{viewModel.createAlbum}"/>
+
+	</LinearLayout>
+
+</layout>

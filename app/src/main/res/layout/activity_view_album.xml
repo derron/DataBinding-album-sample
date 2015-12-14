@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="album"
+            type="com.example.databinding.model.Album" />
+        <variable
+            name="handler"
+            type="com.example.databinding.viewmodel.ViewAlbumViewModel" />
+    </data>
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical" >
+    
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1.0">
+    
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/Heading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title" />
+    
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{album.title}" />
+    
+                <TextView
+                    style="@style/Heading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/artist" />
+    
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{album.artist}" />
+    
+                <TextView
+                    style="@style/Heading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/classical" />
+    
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{album.classical ? @string/classical : @string/not_classical}" />
+    
+                <TextView
+                    style="@style/Heading"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/composer"
+                    android:visibility="@{album.classical ? View.VISIBLE : View.GONE}" />
+    
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{album.composer}"
+                    android:visibility="@{album.classical ? View.VISIBLE : View.GONE}" />
+            </LinearLayout>
+        </ScrollView>
+    
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler.editAlbum}"
+            android:text="@string/edit" />
+    
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler.deleteAlbum}"
+            android:text="@string/delete" />
+    
+    </LinearLayout>
+
+</layout>
