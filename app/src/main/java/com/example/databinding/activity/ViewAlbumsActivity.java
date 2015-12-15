@@ -17,7 +17,6 @@ public class ViewAlbumsActivity extends AbstractActivity {
         mViewModel = new ViewAlbumsViewModel(getAlbumStore());
         ActivityViewAlbumsBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_view_albums);
         binding.setViewModel(mViewModel);
-        binding.albumListView.setEmptyView(binding.emptyView);
     }
 
     @Override

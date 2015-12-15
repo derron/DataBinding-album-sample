@@ -6,6 +6,7 @@ import android.databinding.BindingConversion;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 
 import com.example.databinding.R;
@@ -35,9 +36,13 @@ public class AlbumApp extends Application {
         return albumStore;
     }
 
-    @BindingConversion
-    public static View convertResIdToLayout(int resId) {
-        return View.inflate(AlbumApp.getInstance(), resId, null);
+    @BindingAdapter("emptyView")
+    public static <T> void setEmptyView(AdapterView adapterView, int viewId) {
+        View rootView = adapterView.getRootView();
+        View emptyView = rootView.findViewById(viewId);
+        if (emptyView != null) {
+            adapterView.setEmptyView(emptyView);
+        }
     }
 
 }

@@ -19,6 +19,7 @@
 			android:layout_weight="1.0"
             app:items="@{viewModel.albums}"
             app:itemView="@{viewModel.itemView}"
+			app:emptyView="@{@id/empty_view}"
             android:onItemClick="@{viewModel.viewAlbum}"
 			android:id="@+id/albumListView"/>
 
