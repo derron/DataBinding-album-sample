@@ -32,35 +32,26 @@ public class CreateEditAlbumViewModel extends BaseObservable {
         return albumBuilder.getTitle();
     }
 
-    public TextViewBindingAdapter.AfterTextChanged titleChanged = new TextViewBindingAdapter.AfterTextChanged() {
-        @Override
-        public void afterTextChanged(Editable s) {
-            albumBuilder.setTitle(s.toString());
-        }
-    };
+    public void titleChanged(Editable s) {
+        albumBuilder.setTitle(s.toString());
+    }
 
     public String getArtist() {
         return albumBuilder.getArtist();
     }
 
-    public TextViewBindingAdapter.AfterTextChanged artistChanged = new TextViewBindingAdapter.AfterTextChanged() {
-        @Override
-        public void afterTextChanged(Editable s) {
-            albumBuilder.setArtist(s.toString());
-        }
-    };
+    public void artistChanged(Editable s) {
+        albumBuilder.setArtist(s.toString());
+    }
 
     public boolean isClassical() {
         return albumBuilder.isClassical();
     }
 
-    public CompoundButton.OnCheckedChangeListener classicalChanged = new CompoundButton.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            albumBuilder.setClassical(isChecked);
-            notifyPropertyChanged(BR.composerEnabled);
-        }
-    };
+    public void classicalChanged(CompoundButton buttonView, boolean isChecked) {
+        albumBuilder.setClassical(isChecked);
+        notifyPropertyChanged(BR.composerEnabled);
+    }
 
     @Bindable
     public boolean isComposerEnabled() {
@@ -71,11 +62,8 @@ public class CreateEditAlbumViewModel extends BaseObservable {
         return albumBuilder.getComposer();
     }
 
-    public TextViewBindingAdapter.AfterTextChanged composerChanged = new TextViewBindingAdapter.AfterTextChanged() {
-        @Override
-        public void afterTextChanged(Editable s) {
-            albumBuilder.setComposer(s.toString());
-        }
-    };
+    public void composerChanged(Editable s) {
+        albumBuilder.setComposer(s.toString());
+    }
 
 }
