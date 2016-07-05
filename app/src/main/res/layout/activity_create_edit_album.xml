@@ -28,7 +28,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:text="@{viewModel.title}"
-                android:afterTextChanged="@{viewModel.titleChanged}"/>
+                android:afterTextChanged="@{viewModel::titleChanged}"/>
     
             <TextView
                 style="@style/Heading"
@@ -42,7 +42,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:text="@{viewModel.artist}"
-                android:afterTextChanged="@{viewModel.artistChanged}"/>
+                android:afterTextChanged="@{viewModel::artistChanged}"/>
     
             <TextView
                 style="@style/Heading"
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="@{viewModel.classical}"
-                android:onCheckedChanged="@{viewModel.classicalChanged}"/>
+                android:onCheckedChanged="@{viewModel::classicalChanged}"/>
     
             <TextView
                 style="@style/Heading"
@@ -69,7 +69,7 @@
                 android:imeOptions="actionNext"
                 android:inputType="text"
                 android:text="@{viewModel.composer}"
-                android:afterTextChanged="@{viewModel.composerChanged}"/>
+                android:afterTextChanged="@{viewModel::composerChanged}"/>
     
             <TextView
                 android:id="@+id/space"
@@ -81,7 +81,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/save"
-                android:onClick="@{viewModel.save}" />
+                android:onClick="@{viewModel::save}" />
             
         </LinearLayout>
     </ScrollView>

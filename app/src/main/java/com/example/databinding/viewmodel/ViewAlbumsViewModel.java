@@ -54,15 +54,12 @@ public class ViewAlbumsViewModel extends BaseObservable {
         context.startActivity(new Intent(context, CreateEditAlbumActivity.class));
     }
 
-    public AdapterView.OnItemClickListener viewAlbum = new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Context context = view.getContext();
-            Album album = albumStore.getByIndex(position);
-            Intent intent = new Intent(context, ViewAlbumActivity.class);
-            intent.putExtra(ViewAlbumActivity.ALBUM_ID, album.getId());
-            context.startActivity(intent);
-        }
-    };
+    public void viewAlbum(AdapterView<?> parent, View view, int position, long id) {
+        Context context = view.getContext();
+        Album album = albumStore.getByIndex(position);
+        Intent intent = new Intent(context, ViewAlbumActivity.class);
+        intent.putExtra(ViewAlbumActivity.ALBUM_ID, album.getId());
+        context.startActivity(intent);
+    }
 
 }

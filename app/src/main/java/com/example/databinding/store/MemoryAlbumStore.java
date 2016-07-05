@@ -35,14 +35,14 @@ public class MemoryAlbumStore implements AlbumStore {
 
     @Override
     public void save(Album album) {
-	if (album.isNew()) {
-	    album.setId(nextId());
-	    albums.add(album);
-	}
+        if (album.isNew()) {
+            album.setId(nextId());
+            albums.add(album);
+        }
 
-	int index = albums.indexOf(album);
-	albums.remove(index);
-	albums.add(index, album);
+        int index = albums.indexOf(album);
+        albums.remove(index);
+        albums.add(index, album);
     }
 
     private long nextId() {

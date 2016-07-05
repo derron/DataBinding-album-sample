@@ -20,7 +20,7 @@
             app:items="@{viewModel.albums}"
             app:itemView="@{viewModel.itemView}"
             app:emptyView="@{@id/empty_view}"
-            android:onItemClick="@{viewModel.viewAlbum}"
+            android:onItemClick="@{viewModel::viewAlbum}"
             android:id="@+id/albumListView"/>
 
         <TextView
@@ -35,7 +35,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/create"
-            android:onClick="@{viewModel.createAlbum}"/>
+            android:onClick="@{viewModel::createAlbum}"/>
 
     </LinearLayout>
 

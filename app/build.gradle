@@ -26,6 +26,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:22.2.1'
-    compile 'me.tatarka:bindingcollectionadapter:0.16'
-    compile 'me.tatarka:bindingcollectionadapter-recyclerview:0.16'
+    compile 'me.tatarka.bindingcollectionadapter:bindingcollectionadapter:1.2.0'
+    compile 'me.tatarka.bindingcollectionadapter:bindingcollectionadapter-recyclerview:1.2.0'
 }

@@ -51,14 +51,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:onClick="@{handler.deleteAlbum}" />
+                android:onClick="@{handler::deleteAlbum}" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/no"
-                android:onClick="@{handler.dismissDialog}" />
+                android:onClick="@{handler::dismissDialog}" />
 
         </LinearLayout>
 

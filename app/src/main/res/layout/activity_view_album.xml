@@ -78,13 +78,13 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{handler.editAlbum}"
+            android:onClick="@{handler::editAlbum}"
             android:text="@string/edit" />
     
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:onClick="@{handler.deleteAlbum}"
+            android:onClick="@{handler::deleteAlbum}"
             android:text="@string/delete" />
     
     </LinearLayout>
